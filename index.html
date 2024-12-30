@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Umesh Kataria</title>
+	<!-- Modernizr -->
+	<script src="js/modernizr.js"></script>
+	<!-- Open Sans from Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<!-- Main styles file -->
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- Icons via Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+</head>
+<body class="color-scheme-silver">
+	<!-- Animated background -->
+	<canvas id="bg-canvas"></canvas>
+	
+	<!-- First screen -->
+	<div class="splash">
+		<div class="centered-unit">
+			<div class="container">
+				<!-- Main header -->
+				<h1>We're Eager To Meet You As Well!</h1>
+				<!-- Sub header -->
+				<p class="lead">Dealing with some really complicated stuff here</p>
+				
+				<!-- Countdown -->
+				<div class="countdown circled large">
+					<!-- Days -->
+					<div class="time days">
+						<div class="value">00</div>
+						<div class="unit">Days</div>
+					</div>
+					<!-- Hours -->
+					<div class="time hours">
+						<div class="value">00</div>
+						<div class="unit">Hours</div>
+					</div>
+					<!-- Minutes -->
+					<div class="time minutes">
+						<div class="value">00</div>
+						<div class="unit">Minutes</div>
+					</div>
+					<!-- Seconds -->
+					<div class="time seconds">
+						<div class="value">00</div>
+						<div class="unit">Seconds</div>
+					</div>
+				</div>
+				<!-- Countdown end -->
+			</div>	
+		</div>
+	</div>
+	
+	<!-- Second screen -->
+	<div class="overlap">
+	
+		<!-- Link "Scroll down to learn more" -->
+		<a href="" class="more">Scroll down <i class="fa fa-chevron-down"></i> to learn more</a>
+		
+		<!-- Detailed info -->
+		<div class="container few-words">
+			<div class="row">
+				<!-- First column -->
+				<div class="col col-heading">
+					<!-- Detailed info -->
+					<h2>Here's About Me</h2>
+					
+					<!-- Social icons -->
+					<div class="social">
+						<a href="https://x.com/umeshxkataria" class="social-icon">
+							<i class="fa fa-twitter fa-lg"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/umesh-kataria-349949300/" class="social-icon" target="_blank">
+							<i class="fa fa-linkedin fa-lg"></i>
+						</a>
+						<a href="https://github.com/umeshxkataria" class="social-icon" target="_blank">
+							<i class="fa fa-github fa-lg"></i>
+						</a>
+						<a href="https://instagram.com/umeshxkataria" class="social-icon">
+							<i class="fa fa-instagram fa-lg"></i>
+						</a>
+					</div>
+					<!-- Social icons block end -->
+				</div>
+				<!-- First column end -->
+				
+				<!-- Second column -->
+				<div class="col col-content">
+					<p>I'm passionate and a driven individual with a strong focus on community, technology, and personal growth. With a creative side, where I express yourself through writing verses and always exploring new ways to inspire and connect with others. Dedicated to helping those around me unlock their potential, I take an active role in guiding fellow students and fostering meaningful connections. Always curious and forward-thinking, I enjoy learning and growing, both personally and professionally.</p>
+				</div>
+				<!-- Second column end -->
+			</div>
+		</div>
+		<!-- Detailed info block end -->
+		
+		<!-- Send me an email when it's done -->
+		<div class="notify-by-email">
+			<div class="container">	
+				<div class="row">
+					<div class="col col-one-third">
+						<h3>Send me an email when&nbsp;it's done!</h3>
+					</div>
+					<div class="col col-two-thirds">
+						<!-- Subscribe form -->
+						<form action="notify-me.php" id="notifyMe" method="POST">
+							<input type="text" name="email" placeholder="Your e-mail address"/>
+							<button>Send</button>
+							<p class="note">Got no time for myself. You think i'll spam you?</p>
+						</form>
+						<!-- Subscribe form end -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Send me an email when it's done block end	 -->
+
+
+		<!-- Footer -->
+		<div class="footer">
+			<div class="container">
+				&copy; 2024 , Designed By umesh kataria
+			</div>
+		</div>
+		<!-- Footer end -->
+	</div>
+	
+	
+	<!-- JavaScripts -->
+	<script src="js/jquery.js"></script>
+	<script src="js/countdown.js"></script>
+	<script src="js/bezierCanvas.js"></script>
+	<script src="js/notifyMe.js"></script>
+	
+	<script type="text/javascript">
+	$().ready(function(){
+	
+		// Activate countdownTimer plugin on a '.countdown' element
+		$(".countdown").countdownTimer({
+			// Set the end date for the countdown
+			endTime: new Date("July 1, 2024 10:00:00 UTC+5:30")
+		});
+		
+		
+		// Activate notifyMe plugin on a '#notifyMe' element	
+		$("#notifyMe").notifyMe();
+		
+		
+		// Activate bezierCanvas plugin on a #bg-canvas element
+		$("#bg-canvas").bezierCanvas({
+			maxStyles: 1,
+			maxLines: 100,
+			lineSpacing: 1,
+			colorBase: {r: 255,g: 255,b: 255},
+			colorVariation: {r: 0, g: 0, b: 0},
+			moveCenterX: 0,
+			moveCenterY: 0,
+			speedVariation: 0.3,
+			globalAlpha: 1,
+			globalSpeed: 300,
+		});
+		
+		
+		// Add handler on 'Scroll down to learn more' link
+		$().ready(function(){
+			$(".overlap .more").click(function(e){
+				e.preventDefault();
+				$("body,html").animate({scrollTop: $(window).height()});
+			});
+		});		
+		
+	});
+	</script>
+
+</body>
+</html>
